@@ -23,13 +23,13 @@
  */
 package net.isetjb;
 
-import net.isetjb.config.I18N;
 import java.awt.Toolkit;
 import java.awt.event.KeyEvent;
 import javax.swing.JMenu;
 import javax.swing.JMenuBar;
 import javax.swing.JMenuItem;
 import javax.swing.KeyStroke;
+import net.isetjb.config.I18N;
 import org.apache.log4j.Logger;
 
 /**
@@ -44,6 +44,7 @@ public class MenuBar extends JMenuBar
     // file :
     JMenu jMenuFile = new JMenu(I18N.lang("menubar.jMenuFile"));
     JMenuItem jMenuItemFrame1 = new JMenuItem(I18N.lang("menubar.jMenuItemFrame1"));
+    JMenuItem jMenuItemNewCardGame = new JMenuItem(I18N.lang("menubar.jMenuItemNewCardGame"));
     JMenuItem jMenuItemProductFrame = new JMenuItem(I18N.lang("menubar.jMenuItemProductFrame"));
     JMenuItem jMenuItemQuit = new JMenuItem(I18N.lang("menubar.jMenuItemQuit"));
 
@@ -64,6 +65,9 @@ public class MenuBar extends JMenuBar
 
         jMenuItemFrame1.setAccelerator(KeyStroke.getKeyStroke('R', Toolkit.getDefaultToolkit().getMenuShortcutKeyMask()));
         jMenuFile.add(jMenuItemFrame1);
+
+        jMenuItemNewCardGame.setAccelerator(KeyStroke.getKeyStroke('N', Toolkit.getDefaultToolkit().getMenuShortcutKeyMask()));
+        jMenuFile.add(jMenuItemNewCardGame);
 
         jMenuFile.addSeparator();
 

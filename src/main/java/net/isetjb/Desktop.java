@@ -23,7 +23,6 @@
  */
 package net.isetjb;
 
-import net.isetjb.config.I18N;
 import java.awt.BorderLayout;
 import java.awt.Dimension;
 import java.awt.event.ActionEvent;
@@ -35,6 +34,7 @@ import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.JOptionPane;
 import static javax.swing.WindowConstants.DO_NOTHING_ON_CLOSE;
+import net.isetjb.config.I18N;
 import net.isetjb.product.ProductFrame;
 import org.apache.log4j.Logger;
 
@@ -54,6 +54,7 @@ public class Desktop extends JFrame
     // internal frames :
     FrameAbout frameAbout = new FrameAbout();
     Frame1 frame1 = new Frame1();
+    Frame1 newCardGameFrame = new Frame1();
     ProductFrame productFrame = new ProductFrame();
 
     // menu :
@@ -78,6 +79,7 @@ public class Desktop extends JFrame
         // add internal frames to desktop :
         jDesktopPane.add(frameAbout);
         jDesktopPane.add(frame1);
+        jDesktopPane.add(newCardGameFrame);
         jDesktopPane.add(productFrame);
 
         // add the menu bar :
@@ -115,6 +117,13 @@ public class Desktop extends JFrame
 
                 frame1.setVisible(true);
             }
+        });
+        
+        // jMenuItemFrame1 :
+        menuBar.jMenuItemNewCardGame.addActionListener((ActionEvent ev) -> {
+            log.debug("ActionEvent on " + ev.getActionCommand());
+            
+            newCardGameFrame.setVisible(true);
         });
 
         // window closing event :
